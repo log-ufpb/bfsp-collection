@@ -72,7 +72,7 @@ bool SVNS_D::LS1_D_swap(Solution &solution, std::vector<size_t> &reference) { //
             // Apply move
             std::swap(solution.sequence[index], solution.sequence[j]);
 
-            core::partial_recalculate_solution(m_instance, solution, index);
+            core::recalculate_solution(m_instance, solution);
 
             if (solution.cost <= best_cost) {
                 best_cost = solution.cost;
@@ -87,7 +87,6 @@ bool SVNS_D::LS1_D_swap(Solution &solution, std::vector<size_t> &reference) { //
             std::swap(solution.sequence[index], solution.sequence[best_j]);
             solution.cost = best_cost;
         }
-        core::partial_recalculate_solution(m_instance, solution, index);
     }
 
     return solution.cost < original_cost;
