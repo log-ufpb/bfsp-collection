@@ -58,8 +58,8 @@ void IG_VND2::BestSwap(Solution &solution) { // NOLINT
                 core::partial_recalculate_solution(m_instance, copy, i);
             }
             
-            if (solution.cost <= best_cost) {
-                best_cost = solution.cost;
+            if (copy.cost <= best_cost) {
+                best_cost = copy.cost;
                 best_j = j;
                 best_i = i;
             }
